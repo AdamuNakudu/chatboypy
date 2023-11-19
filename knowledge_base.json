@@ -1,0 +1,68 @@
+{
+  "questions": [
+    {
+      "question": "Hello",
+      "answer": [
+        "Hello",
+        "Hi there",
+        "Greetings!"
+      ]
+    },
+    {
+      "question": "How are you?",
+      "answer": [
+        "I am well. How may I help you?",
+        "Great! How are you feeling?",
+        "Good! How can I help?"
+      ]
+    },
+    {
+      "question": "Whats your name?",
+      "answer": "I am a Resolver. I was designed to help those not feeling too good about themselves. That is what I always strive to do. However, I do not know all the answers."
+    },
+    {
+      "question": "Who are you?",
+      "answer": "I am a Resolver. I was designed to help those not feeling too good about themselves. That is what I always strive to do. However, I do not know all the answers."
+    },
+    {
+      "question": "tell me something new",
+      "answer": [
+        " The sky is not actually blue",
+        "ok",
+        "what do you want to know?"
+      ]
+    },
+    {
+      "question": "good",
+      "answer": "Are you good? There are a few steps to make yourself feel better. Eating fresh, healthy foods is one."
+    },
+    {
+      "question": "I'm sad",
+      "answer": "It is very easy to feel sad. Sometimes it is good to be sad. Don't fight the emotions. Understand why you are feeling this way."
+    },
+    {
+      "question": "I'm depressed",
+      "answer": "Uh oh."
+    },
+    {
+      "question": "I want to be happy",
+      "answer": "Ok I got you!"
+    },
+    {
+      "question": "how are you",
+      "answer": [
+        "I am well. How may I help you?",
+        "Great! How are you feeling?",
+        "Good! How can I help?"
+      ]
+    },
+    {
+      "question": "i have a problem",
+      "answer": [
+        "Oh no, let me see if I can help.",
+        "OK. What is the problem?",
+        "How can I help?"
+      ]
+    }
+  ]
+}

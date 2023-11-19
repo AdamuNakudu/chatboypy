@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RB</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/Users/adamumohammednakudu/Desktop/chatbotpy/chatboypy/static/css/style.css"
+    />
+  </head>
+  <body>
+    <h1>RESOLVER BOT</h1>
+    <div id="chat-container">
+      <div id="chat"></div>
+      <input type="text" id="user-input" placeholder="Type your question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <form id="training-form">
+      <label for="training-data">Training Data(question:answer)</label>
+      <input
+        type="text"
+        id="training-data"
+        name="training_data"
+        placeholder="Enter training data..."
+      />
+      <button type="button" onclick="trainBot()">Train Bot</button>
+    </form>
+
+    <script>
+      function trainBot() {
+        var trainingData = document.getElementById("training-data").value;
+
+        // Send training data to the server
+        fetch("/train", {
+          method: "POST",
+          body: new URLSearchParams({ training_data: trainingData }),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data.response)); // Handle the server response as needed
+      }
+    </script>
+
+    <script>
+      function sendMessage() {
+        var user_input = document.getElementById("user-input").value;
+        appendUserMessage(user_input);
+
+        // Send user input to the server
+        fetch("/ask", {
+          method: "POST",
+          body: new URLSearchParams({ user_input: user_input }),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => appendBotMessage(data.bot_response));
+      }
+
+      function appendUserMessage(message) {
+        document.getElementById("chat").innerHTML +=
+          "<div>You: " + message + "</div>";
+      }
+
+      function appendBotMessage(message) {
+        document.getElementById("chat").innerHTML +=
+          '<div class="bot">Bot: ' + message + "</div>";
+      }
+    </script>
+  </body>
+</html>
